@@ -1,42 +1,28 @@
 /*
- * Examen Refactorizacion
+ * Ejercicio de la primera evaluación de refactorización. 
  * 
  */
 package lovivido;
 
 import javax.swing.JOptionPane;
-
+/**
+ * Consiste en saber cuántos días, meses y horas vivió el usuario.
+ * @author tperezrodriguez
+ */
 public class LoVivido {
+/**
+ * Esta es la clase principal (main) donde instanciamos tanto los datos del usuario como el cálculo de datos para así poder operar con ellos.
+ * @param args son los argumentos del método main
+ */
+    public static void main(String[] args) {
+        
+        DatosUsuario usuario1 = new DatosUsuario();
+        String edad = usuario1.registrarEdad();
+        String nombre = usuario1.registrarNombre();
+        
+        CalculoDatos calculo1 = new CalculoDatos();
+        calculo1.calcularVivido(nombre, edad);
 
-public static void main(String[] args) {
-String n;
-String e;
-
-int m;
-int d;
-int h;
-int a;
-
-n = JOptionPane.showInputDialog ("Escriba su nombre: ");
-e = JOptionPane.showInputDialog ("Escriba su edad: ");
- 
-a = Integer.parseInt (e);
- 
-m = (a*12);
-d = (a*365);
-h = (d*24);
- 
- JOptionPane.showMessageDialog(null,  "Meses: "  +m,"Numero de meses vividos de " +n,JOptionPane.INFORMATION_MESSAGE);
-
-
- JOptionPane.showMessageDialog(null, "Días: " +d,"Numero de días vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
-
-
- JOptionPane.showMessageDialog(null, "Horas: " +h,"Numero de horas vividos de "+n,JOptionPane.INFORMATION_MESSAGE);
-
-   System.exit (0);
-
-}
-   
+    }
 
 }
